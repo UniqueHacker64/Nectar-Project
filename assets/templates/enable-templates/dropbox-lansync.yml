@@ -1,0 +1,18 @@
+---
+- name: dropbox-lansync
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: dropbox-lansync enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dropbox-lansync 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

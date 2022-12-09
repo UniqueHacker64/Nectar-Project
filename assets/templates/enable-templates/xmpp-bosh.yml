@@ -1,0 +1,18 @@
+---
+- name: xmpp-bosh
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: xmpp-bosh enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xmpp-bosh 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: radius
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: radius enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: radius 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: steam-streaming
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: steam-streaming enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: steam-streaming 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

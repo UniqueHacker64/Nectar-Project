@@ -1,0 +1,18 @@
+---
+- name: nrpe
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: nrpe enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nrpe 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

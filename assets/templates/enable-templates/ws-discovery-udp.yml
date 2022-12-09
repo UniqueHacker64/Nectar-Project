@@ -1,0 +1,18 @@
+---
+- name: ws-discovery-udp
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: ws-discovery-udp enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ws-discovery-udp 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

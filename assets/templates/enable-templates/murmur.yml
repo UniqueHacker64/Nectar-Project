@@ -1,0 +1,18 @@
+---
+- name: murmur
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: murmur enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: murmur 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

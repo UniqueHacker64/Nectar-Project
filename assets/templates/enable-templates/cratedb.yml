@@ -1,0 +1,18 @@
+---
+- name: cratedb
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: cratedb enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: cratedb 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

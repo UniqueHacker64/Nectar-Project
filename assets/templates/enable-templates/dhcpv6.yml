@@ -1,0 +1,18 @@
+---
+- name: dhcpv6
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: dhcpv6 enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dhcpv6 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

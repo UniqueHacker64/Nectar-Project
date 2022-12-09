@@ -1,0 +1,18 @@
+---
+- name: ptp
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: ptp enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ptp 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: kodi-rpc
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: kodi-rpc enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kodi-rpc 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

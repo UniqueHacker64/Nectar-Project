@@ -1,0 +1,18 @@
+---
+- name: rdp
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: rdp enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rdp 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

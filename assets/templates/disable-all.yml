@@ -1,0 +1,1489 @@
+---
+- name: disable
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: RH-Satellite-6 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: RH-Satellite-6 
+      permanent: yes
+      state: disabled
+
+  - name: RH-Satellite-6-capsule disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: RH-Satellite-6-capsule 
+      permanent: yes
+      state: disabled
+
+  - name: afp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: afp 
+      permanent: yes
+      state: disabled
+
+  - name: amanda-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: amanda-client 
+      permanent: yes
+      state: disabled
+
+  - name: amanda-k5-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: amanda-k5-client 
+      permanent: yes
+      state: disabled
+
+  - name: amqp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: amqp 
+      permanent: yes
+      state: disabled
+
+  - name: amqps disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: amqps 
+      permanent: yes
+      state: disabled
+
+  - name: apcupsd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: apcupsd 
+      permanent: yes
+      state: disabled
+
+  - name: audit disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: audit 
+      permanent: yes
+      state: disabled
+
+  - name: ausweisapp2 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ausweisapp2 
+      permanent: yes
+      state: disabled
+
+  - name: bacula disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bacula 
+      permanent: yes
+      state: disabled
+
+  - name: bacula-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bacula-client 
+      permanent: yes
+      state: disabled
+
+  - name: bb disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bb 
+      permanent: yes
+      state: disabled
+
+  - name: bgp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bgp 
+      permanent: yes
+      state: disabled
+
+  - name: bitcoin disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bitcoin 
+      permanent: yes
+      state: disabled
+
+  - name: bitcoin-rpc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bitcoin-rpc 
+      permanent: yes
+      state: disabled
+
+  - name: bitcoin-testnet disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bitcoin-testnet 
+      permanent: yes
+      state: disabled
+
+  - name: bitcoin-testnet-rpc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bitcoin-testnet-rpc 
+      permanent: yes
+      state: disabled
+
+  - name: bittorrent-lsd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bittorrent-lsd 
+      permanent: yes
+      state: disabled
+
+  - name: ceph disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ceph 
+      permanent: yes
+      state: disabled
+
+  - name: ceph-mon disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ceph-mon 
+      permanent: yes
+      state: disabled
+
+  - name: cfengine disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: cfengine 
+      permanent: yes
+      state: disabled
+
+  - name: checkmk-agent disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: checkmk-agent 
+      permanent: yes
+      state: disabled
+
+  - name: cockpit disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: cockpit 
+      permanent: yes
+      state: disabled
+
+  - name: collectd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: collectd 
+      permanent: yes
+      state: disabled
+
+  - name: condor-collector disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: condor-collector 
+      permanent: yes
+      state: disabled
+
+  - name: cratedb disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: cratedb 
+      permanent: yes
+      state: disabled
+
+  - name: ctdb disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ctdb 
+      permanent: yes
+      state: disabled
+
+  - name: dhcp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dhcp 
+      permanent: yes
+      state: disabled
+
+  - name: dhcpv6 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dhcpv6 
+      permanent: yes
+      state: disabled
+
+  - name: dhcpv6-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dhcpv6-client 
+      permanent: yes
+      state: disabled
+
+  - name: distcc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: distcc 
+      permanent: yes
+      state: disabled
+
+  - name: dns disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dns 
+      permanent: yes
+      state: disabled
+
+  - name: dns-over-tls disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dns-over-tls 
+      permanent: yes
+      state: disabled
+
+  - name: docker-registry disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: docker-registry 
+      permanent: yes
+      state: disabled
+
+  - name: docker-swarm disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: docker-swarm 
+      permanent: yes
+      state: disabled
+
+  - name: dropbox-lansync disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: dropbox-lansync 
+      permanent: yes
+      state: disabled
+
+  - name: elasticsearch disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: elasticsearch 
+      permanent: yes
+      state: disabled
+
+  - name: etcd-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: etcd-client 
+      permanent: yes
+      state: disabled
+
+  - name: etcd-server disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: etcd-server 
+      permanent: yes
+      state: disabled
+
+  - name: finger disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: finger 
+      permanent: yes
+      state: disabled
+
+  - name: foreman disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: foreman 
+      permanent: yes
+      state: disabled
+
+  - name: foreman-proxy disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: foreman-proxy 
+      permanent: yes
+      state: disabled
+
+  - name: freeipa-4 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: freeipa-4 
+      permanent: yes
+      state: disabled
+
+  - name: freeipa-ldap disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: freeipa-ldap 
+      permanent: yes
+      state: disabled
+
+  - name: freeipa-ldaps disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: freeipa-ldaps 
+      permanent: yes
+      state: disabled
+
+  - name: freeipa-replication disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: freeipa-replication 
+      permanent: yes
+      state: disabled
+
+  - name: freeipa-trust disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: freeipa-trust 
+      permanent: yes
+      state: disabled
+
+  - name: ftp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ftp 
+      permanent: yes
+      state: disabled
+
+  - name: galera disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: galera 
+      permanent: yes
+      state: disabled
+
+  - name: ganglia-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ganglia-client 
+      permanent: yes
+      state: disabled
+
+  - name: ganglia-master disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ganglia-master 
+      permanent: yes
+      state: disabled
+
+  - name: git disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: git 
+      permanent: yes
+      state: disabled
+
+  - name: gpsd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: gpsd 
+      permanent: yes
+      state: disabled
+
+  - name: grafana disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: grafana 
+      permanent: yes
+      state: disabled
+
+  - name: gre disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: gre 
+      permanent: yes
+      state: disabled
+
+  - name: high-availability disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: high-availability 
+      permanent: yes
+      state: disabled
+
+  - name: http disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: http 
+      permanent: yes
+      state: disabled
+
+  - name: http3 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: http3 
+      permanent: yes
+      state: disabled
+
+  - name: https disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: https 
+      permanent: yes
+      state: disabled
+
+  - name: ident disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ident 
+      permanent: yes
+      state: disabled
+
+  - name: imap disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: imap 
+      permanent: yes
+      state: disabled
+
+  - name: imaps disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: imaps 
+      permanent: yes
+      state: disabled
+
+  - name: ipfs disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ipfs 
+      permanent: yes
+      state: disabled
+
+  - name: ipp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ipp 
+      permanent: yes
+      state: disabled
+
+  - name: ipp-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ipp-client 
+      permanent: yes
+      state: disabled
+
+  - name: ipsec disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ipsec 
+      permanent: yes
+      state: disabled
+
+  - name: irc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: irc 
+      permanent: yes
+      state: disabled
+
+  - name: ircs disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ircs 
+      permanent: yes
+      state: disabled
+
+  - name: iscsi-target disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: iscsi-target 
+      permanent: yes
+      state: disabled
+
+  - name: isns disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: isns 
+      permanent: yes
+      state: disabled
+
+  - name: jellyfin disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: jellyfin 
+      permanent: yes
+      state: disabled
+
+  - name: jenkins disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: jenkins 
+      permanent: yes
+      state: disabled
+
+  - name: kadmin disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kadmin 
+      permanent: yes
+      state: disabled
+
+  - name: kdeconnect disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kdeconnect 
+      permanent: yes
+      state: disabled
+
+  - name: kerberos disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kerberos 
+      permanent: yes
+      state: disabled
+
+  - name: kibana disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kibana 
+      permanent: yes
+      state: disabled
+
+  - name: klogin disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: klogin 
+      permanent: yes
+      state: disabled
+
+  - name: kodi-eventserver disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kodi-eventserver 
+      permanent: yes
+      state: disabled
+
+  - name: kodi-rpc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kodi-rpc 
+      permanent: yes
+      state: disabled
+
+  - name: kpasswd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kpasswd 
+      permanent: yes
+      state: disabled
+
+  - name: kprop disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kprop 
+      permanent: yes
+      state: disabled
+
+  - name: kshell disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kshell 
+      permanent: yes
+      state: disabled
+
+  - name: kube-api disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-api 
+      permanent: yes
+      state: disabled
+
+  - name: kube-apiserver disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-apiserver 
+      permanent: yes
+      state: disabled
+
+  - name: kube-control-plane disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-control-plane 
+      permanent: yes
+      state: disabled
+
+  - name: kube-control-plane-secure disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-control-plane-secure 
+      permanent: yes
+      state: disabled
+
+  - name: kube-controller-manager disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-controller-manager 
+      permanent: yes
+      state: disabled
+
+  - name: kube-controller-manager-secure disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-controller-manager-secure 
+      permanent: yes
+      state: disabled
+
+  - name: kube-nodeport-services disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-nodeport-services 
+      permanent: yes
+      state: disabled
+
+  - name: kube-scheduler disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-scheduler 
+      permanent: yes
+      state: disabled
+
+  - name: kube-scheduler-secure disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-scheduler-secure 
+      permanent: yes
+      state: disabled
+
+  - name: kube-worker disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kube-worker 
+      permanent: yes
+      state: disabled
+
+  - name: kubelet disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kubelet 
+      permanent: yes
+      state: disabled
+
+  - name: kubelet-readonly disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kubelet-readonly 
+      permanent: yes
+      state: disabled
+
+  - name: kubelet-worker disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kubelet-worker 
+      permanent: yes
+      state: disabled
+
+  - name: ldap disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ldap 
+      permanent: yes
+      state: disabled
+
+  - name: ldaps disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ldaps 
+      permanent: yes
+      state: disabled
+
+  - name: libvirt disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: libvirt 
+      permanent: yes
+      state: disabled
+
+  - name: libvirt-tls disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: libvirt-tls 
+      permanent: yes
+      state: disabled
+
+  - name: lightning-network disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: lightning-network 
+      permanent: yes
+      state: disabled
+
+  - name: llmnr disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: llmnr 
+      permanent: yes
+      state: disabled
+
+  - name: llmnr-tcp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: llmnr-tcp 
+      permanent: yes
+      state: disabled
+
+  - name: llmnr-udp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: llmnr-udp 
+      permanent: yes
+      state: disabled
+
+  - name: managesieve disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: managesieve 
+      permanent: yes
+      state: disabled
+
+  - name: matrix disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: matrix 
+      permanent: yes
+      state: disabled
+
+  - name: mdns disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mdns 
+      permanent: yes
+      state: disabled
+
+  - name: memcache disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: memcache 
+      permanent: yes
+      state: disabled
+
+  - name: minidlna disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: minidlna 
+      permanent: yes
+      state: disabled
+
+  - name: mongodb disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mongodb 
+      permanent: yes
+      state: disabled
+
+  - name: mosh disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mosh 
+      permanent: yes
+      state: disabled
+
+  - name: mountd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mountd 
+      permanent: yes
+      state: disabled
+
+  - name: mqtt disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mqtt 
+      permanent: yes
+      state: disabled
+
+  - name: mqtt-tls disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mqtt-tls 
+      permanent: yes
+      state: disabled
+
+  - name: ms-wbt disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ms-wbt 
+      permanent: yes
+      state: disabled
+
+  - name: mssql disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mssql 
+      permanent: yes
+      state: disabled
+
+  - name: murmur disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: murmur 
+      permanent: yes
+      state: disabled
+
+  - name: mysql disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mysql 
+      permanent: yes
+      state: disabled
+
+  - name: nbd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nbd 
+      permanent: yes
+      state: disabled
+
+  - name: netbios-ns disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: netbios-ns 
+      permanent: yes
+      state: disabled
+
+  - name: netdata-dashboard disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: netdata-dashboard 
+      permanent: yes
+      state: disabled
+
+  - name: nfs disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nfs 
+      permanent: yes
+      state: disabled
+
+  - name: nfs3 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nfs3 
+      permanent: yes
+      state: disabled
+
+  - name: nmea-0183 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nmea-0183 
+      permanent: yes
+      state: disabled
+
+  - name: nrpe disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nrpe 
+      permanent: yes
+      state: disabled
+
+  - name: ntp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ntp 
+      permanent: yes
+      state: disabled
+
+  - name: nut disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nut 
+      permanent: yes
+      state: disabled
+
+  - name: openvpn disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: openvpn 
+      permanent: yes
+      state: disabled
+
+  - name: ovirt-imageio disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ovirt-imageio 
+      permanent: yes
+      state: disabled
+
+  - name: ovirt-storageconsole disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ovirt-storageconsole 
+      permanent: yes
+      state: disabled
+
+  - name: ovirt-vmconsole disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ovirt-vmconsole 
+      permanent: yes
+      state: disabled
+
+  - name: plex disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: plex 
+      permanent: yes
+      state: disabled
+
+  - name: pmcd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pmcd 
+      permanent: yes
+      state: disabled
+
+  - name: pmproxy disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pmproxy 
+      permanent: yes
+      state: disabled
+
+  - name: pmwebapi disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pmwebapi 
+      permanent: yes
+      state: disabled
+
+  - name: pmwebapis disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pmwebapis 
+      permanent: yes
+      state: disabled
+
+  - name: pop3 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pop3 
+      permanent: yes
+      state: disabled
+
+  - name: pop3s disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pop3s 
+      permanent: yes
+      state: disabled
+
+  - name: postgresql disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: postgresql 
+      permanent: yes
+      state: disabled
+
+  - name: privoxy disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: privoxy 
+      permanent: yes
+      state: disabled
+
+  - name: prometheus disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: prometheus 
+      permanent: yes
+      state: disabled
+
+  - name: prometheus-node-exporter disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: prometheus-node-exporter 
+      permanent: yes
+      state: disabled
+
+  - name: proxy-dhcp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: proxy-dhcp 
+      permanent: yes
+      state: disabled
+
+  - name: ps3netsrv disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ps3netsrv 
+      permanent: yes
+      state: disabled
+
+  - name: ptp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ptp 
+      permanent: yes
+      state: disabled
+
+  - name: pulseaudio disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pulseaudio 
+      permanent: yes
+      state: disabled
+
+  - name: puppetmaster disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: puppetmaster 
+      permanent: yes
+      state: disabled
+
+  - name: quassel disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: quassel 
+      permanent: yes
+      state: disabled
+
+  - name: radius disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: radius 
+      permanent: yes
+      state: disabled
+
+  - name: rdp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rdp 
+      permanent: yes
+      state: disabled
+
+  - name: redis disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: redis 
+      permanent: yes
+      state: disabled
+
+  - name: redis-sentinel disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: redis-sentinel 
+      permanent: yes
+      state: disabled
+
+  - name: rpc-bind disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rpc-bind 
+      permanent: yes
+      state: disabled
+
+  - name: rquotad disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rquotad 
+      permanent: yes
+      state: disabled
+
+  - name: rsh disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rsh 
+      permanent: yes
+      state: disabled
+
+  - name: rsyncd disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rsyncd 
+      permanent: yes
+      state: disabled
+
+  - name: rtsp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rtsp 
+      permanent: yes
+      state: disabled
+
+  - name: salt-master disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: salt-master 
+      permanent: yes
+      state: disabled
+
+  - name: samba disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: samba 
+      permanent: yes
+      state: disabled
+
+  - name: samba-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: samba-client 
+      permanent: yes
+      state: disabled
+
+  - name: samba-dc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: samba-dc 
+      permanent: yes
+      state: disabled
+
+  - name: sane disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: sane 
+      permanent: yes
+      state: disabled
+
+  - name: sip disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: sip 
+      permanent: yes
+      state: disabled
+
+  - name: sips disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: sips 
+      permanent: yes
+      state: disabled
+
+  - name: slp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: slp 
+      permanent: yes
+      state: disabled
+
+  - name: smtp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: smtp 
+      permanent: yes
+      state: disabled
+
+  - name: smtp-submission disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: smtp-submission 
+      permanent: yes
+      state: disabled
+
+  - name: smtps disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: smtps 
+      permanent: yes
+      state: disabled
+
+  - name: snmp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: snmp 
+      permanent: yes
+      state: disabled
+
+  - name: snmptls disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: snmptls 
+      permanent: yes
+      state: disabled
+
+  - name: snmptls-trap disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: snmptls-trap 
+      permanent: yes
+      state: disabled
+
+  - name: snmptrap disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: snmptrap 
+      permanent: yes
+      state: disabled
+
+  - name: spideroak-lansync disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: spideroak-lansync 
+      permanent: yes
+      state: disabled
+
+  - name: spotify-sync disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: spotify-sync 
+      permanent: yes
+      state: disabled
+
+  - name: squid disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: squid 
+      permanent: yes
+      state: disabled
+
+  - name: ssdp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ssdp 
+      permanent: yes
+      state: disabled
+
+  - name: steam-streaming disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: steam-streaming 
+      permanent: yes
+      state: disabled
+
+  - name: svdrp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: svdrp 
+      permanent: yes
+      state: disabled
+
+  - name: svn disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: svn 
+      permanent: yes
+      state: disabled
+
+  - name: syncthing disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: syncthing 
+      permanent: yes
+      state: disabled
+
+  - name: syncthing-gui disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: syncthing-gui 
+      permanent: yes
+      state: disabled
+
+  - name: synergy disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: synergy 
+      permanent: yes
+      state: disabled
+
+  - name: syslog disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: syslog 
+      permanent: yes
+      state: disabled
+
+  - name: syslog-tls disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: syslog-tls 
+      permanent: yes
+      state: disabled
+
+  - name: telnet disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: telnet 
+      permanent: yes
+      state: disabled
+
+  - name: tentacle disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: tentacle 
+      permanent: yes
+      state: disabled
+
+  - name: tftp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: tftp 
+      permanent: yes
+      state: disabled
+
+  - name: tile38 disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: tile38 
+      permanent: yes
+      state: disabled
+
+  - name: tinc disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: tinc 
+      permanent: yes
+      state: disabled
+
+  - name: tor-socks disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: tor-socks 
+      permanent: yes
+      state: disabled
+
+  - name: transmission-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: transmission-client 
+      permanent: yes
+      state: disabled
+
+  - name: upnp-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: upnp-client 
+      permanent: yes
+      state: disabled
+
+  - name: vdsm disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: vdsm 
+      permanent: yes
+      state: disabled
+
+  - name: vnc-server disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: vnc-server 
+      permanent: yes
+      state: disabled
+
+  - name: wbem-http disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: wbem-http 
+      permanent: yes
+      state: disabled
+
+  - name: wbem-https disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: wbem-https 
+      permanent: yes
+      state: disabled
+
+  - name: wireguard disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: wireguard 
+      permanent: yes
+      state: disabled
+
+  - name: ws-discovery disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ws-discovery 
+      permanent: yes
+      state: disabled
+
+  - name: ws-discovery-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ws-discovery-client 
+      permanent: yes
+      state: disabled
+
+  - name: ws-discovery-tcp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ws-discovery-tcp 
+      permanent: yes
+      state: disabled
+
+  - name: ws-discovery-udp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ws-discovery-udp 
+      permanent: yes
+      state: disabled
+
+  - name: wsman disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: wsman 
+      permanent: yes
+      state: disabled
+
+  - name: wsmans disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: wsmans 
+      permanent: yes
+      state: disabled
+
+  - name: xdmcp disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xdmcp 
+      permanent: yes
+      state: disabled
+
+  - name: xmpp-bosh disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xmpp-bosh 
+      permanent: yes
+      state: disabled
+
+  - name: xmpp-client disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xmpp-client 
+      permanent: yes
+      state: disabled
+
+  - name: xmpp-local disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xmpp-local 
+      permanent: yes
+      state: disabled
+
+  - name: xmpp-server disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xmpp-server 
+      permanent: yes
+      state: disabled
+
+  - name: zabbix-agent disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: zabbix-agent 
+      permanent: yes
+      state: disabled
+
+  - name: zabbix-server disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: zabbix-server 
+      permanent: yes
+      state: disabled
+
+  - name: zerotier disable
+    ansible.posix.firewalld:
+      zone: public 
+      service: zerotier 
+      permanent: yes
+      state: disabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted
+

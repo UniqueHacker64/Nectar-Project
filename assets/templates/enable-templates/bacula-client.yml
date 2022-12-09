@@ -1,0 +1,18 @@
+---
+- name: bacula-client
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: bacula-client enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bacula-client 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: xdmcp
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: xdmcp enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xdmcp 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

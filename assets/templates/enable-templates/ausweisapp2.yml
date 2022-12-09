@@ -1,0 +1,18 @@
+---
+- name: ausweisapp2
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: ausweisapp2 enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ausweisapp2 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: kodi-eventserver
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: kodi-eventserver enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kodi-eventserver 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

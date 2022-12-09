@@ -1,0 +1,18 @@
+---
+- name: kubelet-readonly
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: kubelet-readonly enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kubelet-readonly 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

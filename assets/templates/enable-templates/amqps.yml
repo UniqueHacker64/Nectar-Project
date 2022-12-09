@@ -1,0 +1,18 @@
+---
+- name: amqps
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: amqps enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: amqps 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

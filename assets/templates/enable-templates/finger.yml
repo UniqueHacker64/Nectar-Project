@@ -1,0 +1,18 @@
+---
+- name: finger
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: finger enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: finger 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

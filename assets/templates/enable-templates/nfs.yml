@@ -1,0 +1,18 @@
+---
+- name: nfs
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: nfs enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: nfs 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

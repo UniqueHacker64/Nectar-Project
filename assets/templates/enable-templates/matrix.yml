@@ -1,0 +1,18 @@
+---
+- name: matrix
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: matrix enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: matrix 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

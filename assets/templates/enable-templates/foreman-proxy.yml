@@ -1,0 +1,18 @@
+---
+- name: foreman-proxy
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: foreman-proxy enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: foreman-proxy 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

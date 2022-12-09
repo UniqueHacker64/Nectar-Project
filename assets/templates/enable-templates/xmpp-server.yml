@@ -1,0 +1,18 @@
+---
+- name: xmpp-server
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: xmpp-server enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: xmpp-server 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

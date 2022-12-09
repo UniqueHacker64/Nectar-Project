@@ -1,0 +1,18 @@
+---
+- name: ftp
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: ftp enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ftp 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

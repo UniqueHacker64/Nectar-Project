@@ -1,0 +1,18 @@
+---
+- name: mqtt
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: mqtt enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: mqtt 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

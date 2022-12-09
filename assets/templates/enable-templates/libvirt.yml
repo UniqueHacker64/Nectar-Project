@@ -1,0 +1,18 @@
+---
+- name: libvirt
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: libvirt enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: libvirt 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

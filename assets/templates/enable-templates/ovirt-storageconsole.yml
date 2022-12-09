@@ -1,0 +1,18 @@
+---
+- name: ovirt-storageconsole
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: ovirt-storageconsole enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ovirt-storageconsole 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

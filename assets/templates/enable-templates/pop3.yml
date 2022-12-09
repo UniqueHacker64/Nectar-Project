@@ -1,0 +1,18 @@
+---
+- name: pop3
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: pop3 enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: pop3 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

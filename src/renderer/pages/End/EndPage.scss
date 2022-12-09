@@ -1,0 +1,23 @@
+// gradient glowing effect animation
+@keyframes glow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.end-page {
+  background-image: linear-gradient(
+    316deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgb(158 241 239 / 68%) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 400% 400%;
+  animation: glow 10s ease infinite, glow-gradient 5s ease infinite;
+}

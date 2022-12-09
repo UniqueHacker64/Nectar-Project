@@ -1,0 +1,18 @@
+---
+- name: kpasswd
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: kpasswd enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kpasswd 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

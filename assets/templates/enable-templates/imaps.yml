@@ -1,0 +1,18 @@
+---
+- name: imaps
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: imaps enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: imaps 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: openvpn
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: openvpn enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: openvpn 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

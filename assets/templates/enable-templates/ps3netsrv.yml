@@ -1,0 +1,18 @@
+---
+- name: ps3netsrv
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: ps3netsrv enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: ps3netsrv 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

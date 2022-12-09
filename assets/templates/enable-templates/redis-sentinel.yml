@@ -1,0 +1,18 @@
+---
+- name: redis-sentinel
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: redis-sentinel enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: redis-sentinel 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

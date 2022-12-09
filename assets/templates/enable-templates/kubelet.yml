@@ -1,0 +1,18 @@
+---
+- name: kubelet
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: kubelet enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: kubelet 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

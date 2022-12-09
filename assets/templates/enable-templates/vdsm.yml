@@ -1,0 +1,18 @@
+---
+- name: vdsm
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: vdsm enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: vdsm 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

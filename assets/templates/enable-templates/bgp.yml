@@ -1,0 +1,18 @@
+---
+- name: bgp
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: bgp enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: bgp 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

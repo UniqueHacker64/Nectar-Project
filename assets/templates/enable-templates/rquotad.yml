@@ -1,0 +1,18 @@
+---
+- name: rquotad
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: rquotad enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: rquotad 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

@@ -1,0 +1,18 @@
+---
+- name: snmptls-trap
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: snmptls-trap enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: snmptls-trap 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

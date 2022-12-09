@@ -1,0 +1,18 @@
+---
+- name: syslog
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: syslog enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: syslog 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

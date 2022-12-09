@@ -1,0 +1,18 @@
+---
+- name: sip
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: sip enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: sip 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  

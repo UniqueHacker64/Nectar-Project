@@ -1,0 +1,18 @@
+---
+- name: freeipa-ldap
+  hosts: all
+  remote_user: ansible
+  become: true
+
+  tasks:
+  - name: freeipa-ldap enable
+    ansible.posix.firewalld:
+      zone: public 
+      service: freeipa-ldap 
+      permanent: yes
+      state: enabled
+
+  - name: firewall reload
+    service:
+      name: firewalld
+      state: restarted  
